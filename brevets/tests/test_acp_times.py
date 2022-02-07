@@ -27,22 +27,20 @@ def test_brevit200():
     assert(acp_times.close_time(100, 200, starttime) == s100)
     assert(acp_times.close_time(240, 200, starttime) == s200)
 
-
-
 def test_brevit300():
     s199 = starttime.shift(hours=+5,minutes=+51)
     s201 = starttime.shift(hours=5,minutes=+55)
     s360 = starttime.shift(hours=+9.0000)
     assert(acp_times.open_time(199, 300,starttime) == s199)
     assert(acp_times.open_time(201, 300,starttime) == s201)
-    assert(acp_times.open_time(360, 300,starttime) == s360)
+
 
     s199 = starttime.shift(hours=+13, minutes=+16)
     s201 = starttime.shift(hours=+13, minutes=+24)
     s360 = starttime.shift(hours=+20.0000)
     assert(acp_times.close_time(199, 400,starttime) == s199)
     assert(acp_times.close_time(201, 400,starttime) == s201)
-    assert(acp_times.close_time(360, 300,starttime) == s360)
+
 
 def test_brevit400():
 
@@ -59,15 +57,14 @@ def test_brevit400():
     s201 = starttime.shift(hours=+13, minutes=+24)
     s360 = starttime.shift(hours=+24, minutes=+0)
     s460 = starttime.shift(hours=+27, minutes=+0)
-    assert(acp_times.open_time(199, 400,starttime) == s199)
-    assert(acp_times.open_time(201, 400,starttime) == s201)
-    assert(acp_times.open_time(360, 400,starttime) == s360)
-    assert(acp_times.open_time(460, 400,starttime) == s460)
-
+    assert(acp_times.close_time(199, 400,starttime) == s199)
+    assert(acp_times.close_time(201, 400,starttime) == s201)
+    assert(acp_times.close_time(360, 400,starttime) == s360)
+    assert(acp_times.close_time(460, 400,starttime) == s460)
 
 
 def test_brevit600():
-        s170 = starttime.shift(hours=+5, minutes=+16)
+        s170 = starttime.shift(hours=+5, minutes=+00)
         s370 = starttime.shift(hours=+11, minutes=+12)
         s700 = starttime.shift(hours=+18, minutes=+48)
         assert(acp_times.open_time(170, 600,starttime) ==s170)
@@ -80,8 +77,6 @@ def test_brevit600():
         assert(acp_times.close_time(170, 600,starttime) ==s170)
         assert(acp_times.close_time(370, 600,starttime) ==s370)
         assert(acp_times.close_time(700, 600,starttime) ==s700)
-
-
 
 def test_brevit1000():
         s230 = starttime.shift(hours=+6, minutes=+49)
