@@ -52,7 +52,7 @@ def open_time(control_dist_km, brevet_dist_km, brevet_start_time):
             control_dist_km = returnList[0]
             timeSum += returnList[1]
 
-        elif((brevet_dist_km == 300 and control_dist_km <= 360 and control_dist_km > 300) or (brevet_dist_km == 300 and control_dist_km > 200 and  control_dist_km < 300)):
+        elif((brevet_dist_km == 300 and control_dist_km <= 360 and control_dist_km > 300) or (brevet_dist_km == 300 and control_dist_km > 200 and  control_dist_km <= 300)):
             returnList = helperFunction(brevet_dist_km, control_dist_km, dict, 200)
             control_dist_km = returnList[0]
             timeSum += returnList[1]
@@ -86,7 +86,6 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
         shiftedTime = brevet_start_time.shift(hours=1)
         return shiftedTime
 
-
     if(control_dist_km >= brevet_dist_km):
         if(brevet_dist_km == 200):
             shiftedTime = brevet_start_time.shift(hours=13.5)
@@ -100,7 +99,6 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
         if(brevet_dist_km == 1000):
             shiftedTime = brevet_start_time.shift(hours=75)
             return shiftedTime
-
 
     dict = {0:15, 200:15 , 400:15, 600:11.428}
     timeSum = 0
@@ -120,7 +118,7 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
             control_dist_km = returnList[0]
             timeSum += returnList[1]
 
-        elif((brevet_dist_km == 300 and control_dist_km <= 360 and control_dist_km > 300) or (brevet_dist_km == 300 and control_dist_km > 200 and  control_dist_km < 300)):
+        elif((brevet_dist_km == 300 and control_dist_km <= 360 and control_dist_km > 300) or (brevet_dist_km == 300 and control_dist_km > 200 and  control_dist_km <= 300)):
             returnList = helperFunction(brevet_dist_km, control_dist_km, dict, 200)
             control_dist_km = returnList[0]
             timeSum += returnList[1]
